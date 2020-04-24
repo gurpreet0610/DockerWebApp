@@ -26,8 +26,7 @@ services:
 #       - admin
 #     ports:
 #       "5050:8080"
-  
- pgadmin:
+  pgadmin:
     container_name: pgadmin_container
     image: dpage/pgadmin4
     environment:
