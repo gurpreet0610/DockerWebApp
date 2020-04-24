@@ -1,0 +1,47 @@
+version: "3"
+
+services:
+  postgres:
+    container_name: postgres_database
+    image: postgres
+    environment:
+      POSTGRES_USER: gurpreet
+      POSTGRES_PASSWORD: gurpreet
+      POSTGRES_DB: ImagesDatabase
+      PGDATA: /data/postgres
+      
+    volumes:
+       - mydb:/data/postgres
+    networks: 
+       - admin
+    ports:
+      - "9811:5432"
+    restart: always
+  
+  # tiangolo/uwsgi-nginx-flask:python3.6: 
+  #   container_name : webapp
+  #   volumes :
+  #     - /home/gurpreet/Code/Docker/FirstDockerProject/test:/test
+  #   networks :
+  #     - admin
+  #   ports:
+  #     "5050:8080"
+  
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: imailgurpreet@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: gurpreet
+    networks : 
+      - admin
+    ports:
+      - "8007:80"
+    restart: always
+
+networks:
+  admin:
+    driver: bridge
+
+volumes :
+  mydb:
