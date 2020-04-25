@@ -1,9 +1,3 @@
 postgres_database is up-to-date
 webapp is up-to-date
 pgadmin_container is up-to-date
-Traceback (most recent call last):
-  File "/home/gurpreet/Code/github/DockerWebApp/controller/Utils.py", line 75, in <module>
-    email_it("Build")
-  File "/home/gurpreet/Code/github/DockerWebApp/controller/Utils.py", line 43, in email_it
-    --LOG-END-- """.format()
-IndexError: tuple index out of range
