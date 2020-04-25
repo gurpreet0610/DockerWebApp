@@ -18,14 +18,19 @@ services:
       - "9811:5432"
     restart: always
   
-#   tiangolo/uwsgi-nginx-flask:python3.6: 
-#     container_name : webapp
-#     volumes :
-#       - /home/gurpreet/Code/Docker/FirstDockerProject/test:/test
-#     networks :
-#       - admin
-#     ports:
-#       "5050:8080"
+  web: 
+    container_name : webapp
+    build: .
+    environment:
+      DBHOST: postgres_database
+      DBNAME: ImagesDatabase
+      DBUSER: "gurpreet"
+      DBPASS: "gurpreet"
+    networks :
+      - admin
+    ports:
+      - "8080:5000"
+  
   pgadmin:
     container_name: pgadmin_container
     image: dpage/pgadmin4
