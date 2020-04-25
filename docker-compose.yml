@@ -29,7 +29,7 @@ services:
     networks :
       - admin
     ports:
-      - "8080:5000"
+      - "9000:5000"
   
   pgadmin:
     container_name: pgadmin_container
