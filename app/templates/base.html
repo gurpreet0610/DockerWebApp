@@ -10,9 +10,80 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
+    <style>
+        body{
+            background-image: url(https://www.wallpaperflare.com/static/641/221/156/computer-notebook-laptop-working-wallpaper.jpg);
+            background-size: cover;
+        }
+        header{
+            background-color: rgba(0,0,0,0.5);
+            margin: 0px;
+            width: 100%;
+            height: 60px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            padding: 0px;
+            position: fixed;
+            top: 0px;
+        }
+        header h2{
+            margin: 10px;
+        }
+        #content{
+            max-width: 500px;
+            background-color: rgba(0,0,0,0.7);
+            margin-top: 20%;
+            margin-left: 35%;
+            min-height: 300px;
+            padding: 20px;
+            text-align: center;
+        }
+        #content h1{
+            color: white;
+            text-align: center;
+        }
+        #content table{
+            text-align: center;
+            border: 1px solid white;
+            border-radius: 6px;
+            margin-left: 18%;
+            margin-top: 20px;
+            border-spacing: 0px;
+            
+        }
+        #content table th{
+            text-align: center !important;
+            border-right: 1px solid white;
+        }
+        #content table tr{
+            color: white;
+            border-top: none;
+        }
+        .table-striped>tbody>tr:nth-of-type(odd){
+            background-color: transparent;
+        }
+        .table>tbody>tr>td{
+            border-bottom: 1px solid white;
+            border-top: none;
+            color: white;
+            border-right: 1px solid white;
+        }
+        .btn-default{
+            background-image: none;
+            background-color: transparent !important;
+            text-shadow: none !important;
+            color: white !important;
+        }
+    </style>
     {% endblock %}
 </head>
 <body>
+    <header>
+        <div>
+            <h2>Name goes here..</h2>
+        </div>
+    </header>
     <div id="content" style="max-width: 500px; padding:10px;">{% block content %}{% endblock %}</div>
 </body>
 </html>
