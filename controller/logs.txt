@@ -1,3 +1,17 @@
-postgres_database is up-to-date
-pgadmin_container is up-to-date
-webapp is up-to-date
+postgres uses an image, skipping
+pgadmin uses an image, skipping
+Building web
+Step 1/8 : FROM tiangolo/uwsgi-nginx-flask:python3.6
+ ---> 95ffc3f2fef6
+Step 2/8 : COPY requirements.txt /
+ ---> 67da949d6d0a
+Step 3/8 : RUN pip3 install -r ./requirements.txt --no-cache-dir
+ ---> Running in 1a58a16ef1cc
+Collecting MarkupSafe==1.0.0
+  Downloading MarkupSafe-1.0.tar.gz (14 kB)
+      File "/tmp/pip-install-n5ykgs62/MarkupSafe/setup.py", line 6, in 
+        from setuptools import setup, Extension, Feature
+    ImportError: cannot import name 'Feature'
+    ----------------------------------------
+ [0m [91mERROR: Command errored out with exit status 1: python setup.py egg_info Check the logs for full command output.
+ [0mService 'web' failed to build: The command '/bin/sh -c pip3 install -r ./requirements.txt --no-cache-dir' returned a non-zero code: 1

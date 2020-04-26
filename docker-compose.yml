@@ -5,9 +5,9 @@ services:
     container_name: postgres_database
     image: postgres
     environment:
-      POSTGRES_USER: gurpreet
-      POSTGRES_PASSWORD: gurpreet
-      POSTGRES_DB: ImagesDatabase
+      POSTGRES_USER: USER_NAME
+      POSTGRES_PASSWORD: USER_PASS
+      POSTGRES_DB: DBNAME
       PGDATA: /data/postgres
       
     volumes:
@@ -24,8 +24,8 @@ services:
     environment:
       DBHOST: postgres_database
       DBNAME: ImagesDatabase
-      DBUSER: "gurpreet"
-      DBPASS: "gurpreet"
+      DBUSER: "USER_NAME"
+      DBPASS: "USER_PASS"
     networks :
       - admin
     ports:
@@ -35,8 +35,8 @@ services:
     container_name: pgadmin_container
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: imailgurpreet@gmail.com
-      PGADMIN_DEFAULT_PASSWORD: gurpreet
+      PGADMIN_DEFAULT_EMAIL: user@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: USER_PASS
     networks : 
       - admin
     ports:

@@ -45,8 +45,8 @@ def email_it(problem):
     print(problem+ " Error")
     message = MIMEMultipart()
     message['Subject'] = 'Automatic deployment failed.'
-    message['From'] = 'imailgurpreet@gmail.com'
-    message['To'] = 'gurpreets8117@else.com'
+    message['From'] = 'sender@gmail.com'
+    message['To'] = 'receiver@gmail.com'
     f=open("controller/logs.txt", "r")
     fail="""<h2> Flask Web Application - <b> {}</b> Failed.<br/></h2>
             <br/>
@@ -62,6 +62,5 @@ def email_it(problem):
     message.attach(MIMEText(fail, 'html') )       
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login("mrsingh8117@gmail.com", "Qwerty123@")             
-    # server.sendmail(“sender@gmail.com”, “receiver@gmail.com”, “YourMessage”)
-    server.sendmail("mrsingh8117@gmail.com", "gurpreets8117@gmail.com", message.as_string())
+    server.login("sender@gmail.com", "password")             
+    server.sendmail("sender@gmail.com", "receiver@gmail.com", message.as_string())
